@@ -4,7 +4,7 @@ import axios from 'axios'
 import { toast } from 'react-toastify'
 import { AuthContext } from '../../AuthContext/Context'
 
-function Menu() {
+function Menu(props) {
     const context = useContext(AuthContext)
     const token = context.token
     const isAdmin = context.isAdmin
@@ -17,10 +17,10 @@ function Menu() {
                 await axios.get(`/api/auth/signout`)
                     .then(res => {
                         toast.success(res.data.msg)
+                        window.location.href="/login"
+                        navigate(`/login`)
                         localStorage.removeItem('loginStatus')
                         localStorage.removeItem('loginToken')
-                        window.location.reload()
-                        navigate(`/`)
                     }).catch(err => toast.error(err.response.data.msg))
         }
     }
@@ -68,6 +68,9 @@ function Menu() {
                                                 <ul className="dropdown-menu">
                                                     <li>
                                                         <NavLink to={`/admin/home`} className="dropdown-item">Admin Dashboard</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to={`/admin/category`} className="dropdown-item">Document category</NavLink>
                                                     </li>
                                                 </ul>
                                                 </li> 
