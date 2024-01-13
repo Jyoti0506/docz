@@ -48,7 +48,7 @@ function Menu(props) {
                                              <NavLink to={`/`} className="nav-link">Home</NavLink>
                                         </li>
                                      </ul>
-                                     <ul className="navabar-nav">
+                                     <ul className="navbar-nav">
                                         {
                                             isUser && token ? (      
                                                  <li className="nav-item dropdown">
@@ -56,6 +56,9 @@ function Menu(props) {
                                                 <ul className="dropdown-menu">
                                                     <li>
                                                         <NavLink to={`/user/home`} className="dropdown-item">User Dashboard</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to={`/doc/upload`} className="dropdown-item">Upload Document</NavLink>
                                                     </li>
                                                 </ul>
                                                 </li> 

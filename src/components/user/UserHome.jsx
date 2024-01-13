@@ -53,7 +53,7 @@ function UserHome() {
                   return (
                     <div className="col-md-3 mt-2 mb-2" key={index}>
                         <div className="card">
-                            <embed src={item.url} alt={item.title} className="card-img-top" />
+                            <img src={item.url} alt={item.title} className="card-img-top" />
                             <div className="card-body">
                                  <p className="badge bg-primary float-end"> {item.category} </p>
                                  <br />
